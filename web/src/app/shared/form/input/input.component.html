@@ -1,5 +1,5 @@
 <div class="d-flex flex-column">
-  <app-control-label [control]="control" [label]="label"></app-control-label>
+  <app-control-label [control]="control" [label]="label" [customErrorMessages]="customErrorMessages"></app-control-label>
   <input [type]="type" [formControl]="control" placeholder="{{label}}"
          class="form__input" [ngClass]="{'invalid': control.invalid && control.touched}" />
 </div>

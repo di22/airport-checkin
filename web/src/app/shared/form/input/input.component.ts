@@ -14,4 +14,5 @@ export class InputComponent {
   @Input() type: string = 'text';
   @Input() control: FormControl = new FormControl<any>('');
   @Input() label: string;
+  @Input() customErrorMessages: {[key: string]: string};
 }

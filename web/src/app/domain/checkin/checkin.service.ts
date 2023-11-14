@@ -13,6 +13,10 @@ export class CheckinService {
   }
 
   execute(checkinDate: Checkin): Observable<ApolloQueryResult<any>> {
+    const value = checkinDate;
+    value.code = +value.code;
+    value.lastname = value.lastname.toLowerCase();
+
     return this.apollo
     .watchQuery<any>({
       query: gql`
@@ -28,7 +32,7 @@ export class CheckinService {
       context: {
         headers: new HttpHeaders().set("Accept-Language", "en"),
       },
-      variables: {...checkinDate}
+      variables: {...value}
     })
     .valueChanges
   }

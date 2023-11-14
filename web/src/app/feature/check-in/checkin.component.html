@@ -10,14 +10,14 @@
   <main class="main d-flex flex-column">
     <header class="header">Check in</header>
     <div class="card d-flex flex-column">
-      <span *ngIf="serverError" data-test="server-error" class="message-error">{{serverError}}</span>
-      <form [formGroup]="form" class="form">
-        <app-input label="{{'Last_Name' | translate}}" [control]="lastname" type="text"></app-input>
-        <app-input label="{{'Code' | translate}}" [control]="code" type="text"></app-input>
+      <span *ngIf="serverError" data-test="server-error" class="server-error">{{serverError}}</span>
+      <form [formGroup]="form" class="form" (keydown.enter)="checkin()">
+        <app-input label="{{'Last_Name' | translate}}" [customErrorMessages]="{'pattern': 'The last name shouldn be only characters'}" [control]="lastname" type="text"></app-input>
+        <app-input label="{{'Code' | translate}}" [customErrorMessages]="{'pattern': 'The code shouldn be only numbers'}" [control]="code" type="text"></app-input>
         <app-input label="{{'Date' | translate}}" [control]="date" type="date"></app-input>
       </form>
       <button data-test="form-button" type="button" (click)="checkin()" class="button primary-button">
-        Submit
+        Checkin
       </button>
     </div>
   </main>

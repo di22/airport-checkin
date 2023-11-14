@@ -47,9 +47,6 @@ export class CheckinComponent implements OnInit {
   }
 
   executeCheckin(): void {
-    const value = this.form.value;
-    value.code = +value.code;
-    value.lastname = value.lastname.toLowerCase();
     this.checkinService.execute(this.form.value).subscribe(res => {
       const message = res.data?.checkin?.message;
       this.shareDataService.subject.next(message);
@@ -59,7 +56,7 @@ export class CheckinComponent implements OnInit {
     })
   }
 
-  public validateAllFormFields(formGroup: FormGroup): void {
+  validateAllFormFields(formGroup: FormGroup): void {
     Object.keys(formGroup.controls).forEach(field => {
       const control = formGroup.get(field);
       if (control instanceof FormControl) {
