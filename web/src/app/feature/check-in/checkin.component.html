@@ -1,0 +1,25 @@
+<div class="d-flex flex-row">
+  <div class="d-flex flex-column justify-content-between mt-2 p-2 w-25">
+    <div class="d-flex flex-row white-space"><strong>Success scenario</strong>: <span>hammad, 123, today date</span></div>
+    <div class="d-flex flex-row white-space"><strong>9001</strong>: <span>hammad, 555, today date</span></div>
+    <div class="d-flex flex-row white-space"><strong>9002</strong>: <span>kkkk, 123, today date</span></div>
+    <div class="d-flex flex-row white-space"><strong>9003</strong>: <span>hammad, 123, tomorrow date </span></div>
+    <div class="d-flex flex-row white-space"><strong>9004</strong>: <span>hammad, 123, yesterday date</span></div>
+  </div>
+
+  <main class="main d-flex flex-column">
+    <header class="header">Check in</header>
+    <div class="card d-flex flex-column">
+      <span *ngIf="serverError" data-test="server-error" class="message-error">{{serverError}}</span>
+      <form [formGroup]="form" class="form">
+        <app-input label="{{'Last_Name' | translate}}" [control]="lastname" type="text"></app-input>
+        <app-input label="{{'Code' | translate}}" [control]="code" type="text"></app-input>
+        <app-input label="{{'Date' | translate}}" [control]="date" type="date"></app-input>
+      </form>
+      <button data-test="form-button" type="button" (click)="checkin()" class="button primary-button">
+        Submit
+      </button>
+    </div>
+  </main>
+</div>
+

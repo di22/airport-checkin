@@ -1,0 +1,37 @@
+.form__input {
+  width: clamp(120px, 50vw, 420px);
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  border: 1px solid #000;
+  border-radius: 2px;
+  margin: 0.625rem auto;
+  transition: all 250ms;
+  @media (min-width: 768px) {
+    width: clamp(120px, 35vw, 420px);
+  }
+
+  &::placeholder {
+    display: none;
+    color: transparent;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+  &:not(:placeholder-shown) {
+    border-top-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.form__label {
+  font-size: 1rem;
+  color: #a19b9b;
+  display: block;
+
+  pointer-events: none;
+}
+
+.invalid {
+  border: 1px solid #f23a3c;
+  box-shadow: 0 0 3px #f23a3c;
+}

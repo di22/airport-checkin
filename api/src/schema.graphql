@@ -1,0 +1,43 @@
+scalar JSON
+
+type Query {
+    bookings: [Booking]
+    travelers: [Traveler]
+    booking: Booking
+    flights: [Flight]
+    labels: JSON
+    checkin(code: Int, lastname: String, date: String): Response
+}
+
+type Traveler {
+    id: ID
+    firstName: String
+    lastName: String
+    bookings: [Booking!]!
+}
+
+type Booking {
+    id: ID
+    code: Int
+    traveler: Traveler!
+    checkedInDate: String
+    flight: Flight
+}
+
+type Flight {
+    id: ID
+    travelers: [Traveler!]!
+    date: String
+    checkinStarted: Boolean
+    checkinClosed: Boolean
+}
+
+type Label {
+    key: String
+    value: String
+}
+
+type Response {
+    message: String
+    status: Int
+}
