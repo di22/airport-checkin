@@ -1,48 +1,65 @@
-.main {
-  width: 50%;
-  .header {
-    font-family: 'Kelly Slab', cursive;
-    margin-bottom: 1rem;
-    font-size: 3rem;
+.container {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
   }
 
-  .card {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    padding: 2rem;
-    justify-content: center;
+  .info {
+    @media (max-width: 700px) {
+      width: 100%;
+    }
   }
+  .main {
+    width: 50%;
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+    .header {
+      font-family: 'Kelly Slab', cursive;
+      margin-bottom: 1rem;
+      font-size: 3rem;
+    }
 
-  .form {
-    align-self: center;
-  }
+    .card {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      padding: 2rem;
+      justify-content: center;
+    }
+
+    .form {
+      align-self: center;
+    }
 
 
-  .button {
-    cursor: pointer;
-    border: none;
-    padding: 1rem;
-    margin-top: 2rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    transition: 0.3s;
-  }
+    .button {
+      cursor: pointer;
+      border: none;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
 
-  .primary-button {
-    background-color: rgb(0, 102, 204);
-    color: white;
-  }
+    .primary-button {
+      background-color: rgb(0, 102, 204);
+      color: white;
+    }
 
-  .primary-button:hover {
-    background-color: rgb(0, 102, 204, 0.85);
-  }
+    .primary-button:hover {
+      background-color: rgb(0, 102, 204, 0.85);
+    }
 
-  .server-error {
-    padding: .3rem;
-    color: #8d0203;
-    text-align: left;
-    background: rgba(141,2,3,.1);
-    border-radius: 3px;
-    margin-bottom: 2rem;
+    .server-error {
+      padding: .3rem;
+      color: #8d0203;
+      text-align: left;
+      background: rgba(141,2,3,.1);
+      border-radius: 3px;
+      margin-bottom: 2rem;
+    }
   }
 }
