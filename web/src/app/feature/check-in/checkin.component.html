@@ -13,7 +13,7 @@
       <span *ngIf="serverError" data-test="server-error" class="server-error">{{serverError}}</span>
       <form [formGroup]="form" class="form" (keydown.enter)="checkin()">
         <app-input label="{{'Last_Name' | translate}}" [customErrorMessages]="{'pattern': 'The last name shouldn be only characters'}" [control]="lastname" type="text"></app-input>
-        <app-input label="{{'Code' | translate}}" [customErrorMessages]="{'pattern': 'The code shouldn be only numbers'}" [control]="code" type="text"></app-input>
+        <app-input label="{{'Code' | translate}}" [customErrorMessages]="{'pattern': 'The code shouldn be only numbers'}" [control]="code" type="number"></app-input>
         <app-input label="{{'Date' | translate}}" [control]="date" type="date"></app-input>
       </form>
       <button data-test="form-button" type="button" (click)="checkin()" class="button primary-button">
